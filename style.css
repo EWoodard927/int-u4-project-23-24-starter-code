@@ -1,7 +1,8 @@
 /* General body styling */
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('space_background.jpg');
+    background-repeat: no-repeat;
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -12,7 +13,7 @@ body {
 /* Title section styling */
 .title h1 {
     text-align: center;
-    color: #333;
+    color: white;
 }
 
 /* Questions section styling */
@@ -20,14 +21,20 @@ body {
     background-color: #fff;
     margin: 20px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
-    height: 75px;
+    padding: 15px;
     font-size: 20px;
     margin: 0 auto;
+    border-radius: 15px;
+}
+
+.buttonSet {
+    display: flex;
+    gap: 40px;
 }
 
 .questions h4 {
@@ -35,9 +42,18 @@ button {
 }
 
 .questions img {
-    width: 400px; /* Make images responsive */
+    width: 550px; /* Make images responsive */
     height: auto;
-    border-radius: 8px;
+    border-radius: 15px;
+    margin-top: 10px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+img {
+    width: 550px;
+    height: auto;
+    border-radius: 15px;
     margin-top: 10px;
     align-items: center;
     margin: 0 auto;
@@ -58,5 +74,12 @@ button {
 .questionFour,
 .submitButton,
 .result {
+    display: none;
+}
+
+.purpleInfo,
+.blueInfo,
+.greenInfo,
+.yellowInfo {
     display: none;
 }

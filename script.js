@@ -26,6 +26,15 @@ let blueScore = 0;
 let yellowScore = 0;
 let questionScreen = document.querySelector(".questions");
 let resultScreen = document.querySelector(".result");
+let colorResult = document.querySelector(".colorResult");
+let resultPic = document.querySelector(".resultPic");
+let resultInfo = document.querySelector(".resultInfo");
+let userResult = document.querySelector(".userResult");
+let userParagraph = document.querySelector(".userParagraph");
+let purpleInfo = document.querySelector(".purpleInfo");
+let blueInfo = document.querySelector(".blueInfo");
+let greenInfo = document.querySelector(".greenInfo");
+let yellowInfo = document.querySelector(".yellowInfo");
 
 purpleButton1.addEventListener('click', function(){
     purpleScore += 1;
@@ -130,4 +139,151 @@ yellowButton4.addEventListener('click', function(){
 submitButton.addEventListener('click', function(){
     submitButton.style.display = "none";
     resultScreen.style.display = "block";
+
+    if(purpleScore > blueScore && purpleScore > yellowScore && purpleScore > greenScore){
+        colorResult.innerHTML = "purple";
+        resultPic.src = "PurpleLightsaber3.webp";
+        resultInfo.innerHTML = "The purple color of a lightsaber resembles a balance between the light and dark side of the force. Users are able to command the dark side in their battle style, while not allowing it to corrupt them. You're likely a natural leader, who takes on responsibility well.";
+        userResult.innerHTML = "Mace Windu, Vernestra Rwoh";
+    }
+
+    else if(blueScore > purpleScore && blueScore > greenScore && blueScore > yellowScore){
+        colorResult.innerHTML = "blue";
+        resultPic.src = "bluelightsaber.webp";
+        resultInfo.innerHTML = "Blue lightsabers most commonly belong to Jedi Guardians. Jedi Guardians are the bravest and most practical of the Jedi, and they are often entrusted to lead the most difficult missions. When working in a team, decisions will likely fall to you, because your teammates trust your expertise and your moral compass.";
+        userResult.innerHTML = "Anakin Skywalker, Obi-Wan Kenobi";
+    }
+
+    else if(yellowScore > purpleScore && yellowScore > blueScore && yellowScore > greenScore){
+        colorResult.innerHTML = "yellow";
+        resultPic.src = "yellowLightsaber.jpg";
+        resultInfo.innerHTML = "Yellow Lightsabers often belong to Jedi Sentinels or Jedi Temple Guards. Users of this lightsaber are often more independent from the Jedi Temple, and are most capable in their specialized fields. You're constantly in pursuit of new skills or knowledge, striving to become the best version of yourself that you can be.";
+        userResult.innerHTML = "Rey, Asajj Ventress (post-Clone Wars)";
+    }
+
+    else if(greenScore > purpleScore && greenScore > yellowScore && greenScore > blueScore){
+        colorResult.innerHTML = "green";
+        resultPic.src = "luke-skywalker-disney-plus-mandalorian-the-rescue.webp";
+        resultInfo.innerHTML = "Green lightsabers usally belong to Jedi Consulars, Jedi warriors who are more deeply attuned with the force. Users of this lightsaber are more commonly looked to for their wisdom and guidance among their peers. You're likely more understanding and compassionate than most, prioritizing diplomacy over hasty decision-making.";
+        userResult.innerHTML = "Qui-Gon Jinn, Yoda";
+    }
+
+    else if(purpleScore === blueScore && purpleScore > yellowScore && purpleScore > greenScore){
+        colorResult.innerHTML = "tied between purple and blue";
+        purpleInfo.style.display = "block";
+        blueInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === greenScore && purpleScore > blueScore && purpleScore > yellowScore){
+        colorResult.innerHTML = "tied between purple and green";
+        purpleInfo.style.display = "block";
+        greenInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === yellowScore && purpleScore > blueScore && purpleScore > greenScore){
+        colorResult.innerHTML = "tied between purple and yellow";
+        purpleInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(blueScore === greenScore && blueScore > purpleScore && blueScore > yellowScore){
+        colorResult.innerHTML = "tied between blue and green";
+        blueInfo.style.display = "block";
+        greenInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(blueScore === yellowScore && blueScore > purpleScore && blueScore > greenScore){
+        colorResult.innerHTML = "tied between blue and yellow";
+        blueInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(greenScore === yellowScore && greenScore > purpleScore && greenScore > blueScore){
+        colorResult.innerHTML = "tied between green and yellow";
+        greenInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === greenScore && greenScore === yellowScore && yellowScore > blueScore){
+        colorResult.innerHTML = "tied between purple, green, and yellow";
+        purpleInfo.style.display = "block";
+        greenInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === blueScore && blueScore === yellowScore && yellowScore > greenScore){
+        colorResult.innerHTML = "tied between purple, blue, and yellow";
+        purpleInfo.style.display = "block";
+        blueInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === greenScore && greenScore === blueScore && blueScore > yellowScore){
+        colorResult.innerHTML = "tied between purple, green, and blue";
+        purpleInfo.style.display = "block";
+        greenInfo.style.display = "block";
+        blueInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(greenScore === blueScore && blueScore === yellowScore && yellowScore > purpleScore){
+        colorResult.innerHTML = "tied between green, blue, and yellow";
+        greenInfo.style.display = "block";
+        blueInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+
+    else if(purpleScore === blueScore && blueScore === greenScore && greenScore === yellowScore){
+        colorResult.innerHTML = "an all-way tie";
+        purpleInfo.style.display = "block";
+        blueInfo.style.display = "block";
+        greenInfo.style.display = "block";
+        yellowInfo.style.display = "block";
+        userParagraph.style.display = "none";
+    }
+});
+
+purpleInfo.addEventListener('click', function(){
+        colorResult.innerHTML = "purple";
+        userParagraph.style.display = "block";
+        resultPic.src = "PurpleLightsaber3.webp";
+        resultInfo.innerHTML = "The purple color of a lightsaber resembles a balance between the light and dark side of the force. Users are able to command the dark side in their battle style, while not allowing it to corrupt them. You're likely a natural leader, who takes on responsibility well.";
+        userResult.innerHTML = "Mace Windu, Vernestra Rwoh";
+        purpleInfo.style.display = "none";
+});
+
+blueInfo.addEventListener('click', function(){
+        colorResult.innerHTML = "blue";
+        userParagraph.style.display = "block";
+        resultPic.src = "bluelightsaber.webp";
+        resultInfo.innerHTML = "Blue lightsabers most commonly belong to Jedi Guardians. Jedi Guardians are the bravest and most practical of the Jedi, and they are often entrusted to lead the most difficult missions. When working in a team, decisions will likely fall to you, because your teammates trust your expertise and your moral compass.";
+        userResult.innerHTML = "Anakin Skywalker, Obi-Wan Kenobi";
+        blueInfo.style.display = "none";
+});
+
+greenInfo.addEventListener('click', function(){
+        colorResult.innerHTML = "green";
+        userParagraph.style.display = "block";
+        resultPic.src = "luke-skywalker-disney-plus-mandalorian-the-rescue.webp";
+        resultInfo.innerHTML = "Green lightsabers usally belong to Jedi Consulars, Jedi warriors who are more deeply attuned with the force. Users of this lightsaber are more commonly looked to for their wisdom and guidance among their peers. You're likely more understanding and compassionate than most, prioritizing diplomacy over hasty decision-making.";
+        userResult.innerHTML = "Qui-Gon Jinn, Yoda";
+        greenInfo.style.display = "none";
+});
+
+yellowInfo.addEventListener('click', function(){
+        colorResult.innerHTML = "yellow";
+        userParagraph.style.display = "block";
+        resultPic.src = "yellowLightsaber.jpg";
+        resultInfo.innerHTML = "Yellow Lightsabers often belong to Jedi Sentinels or Jedi Temple Guards. Users of this lightsaber are often more independent from the Jedi Temple, and are most capable in their specialized fields. You're constantly in pursuit of new skills or knowledge, striving to become the best version of yourself that you can be.";
+        userResult.innerHTML = "Rey, Asajj Ventress (post-Clone Wars)";
+        yellowInfo.style.display = "none";
 });
